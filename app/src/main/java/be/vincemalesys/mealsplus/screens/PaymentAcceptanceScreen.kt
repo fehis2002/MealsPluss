@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -29,7 +30,8 @@ fun PaymentAcceptanceScreen(modifier: Modifier = Modifier) {
             .padding(10.dp)
             .fillMaxWidth()){
             Title()
-            Text(text = "Uw broodje is besteld. U kunt het ophalen in de Deli om 13:00. U krijgt een melding zodra een het klaargemaakt is met een QR-code.", fontSize = 25.sp, lineHeight = 50.sp)
+            Text(text = "Uw bestelling is geregistreerd.", fontSize = 25.sp, lineHeight = 50.sp, fontWeight = FontWeight.Bold)
+            Text(text = "Van zodra deze gereed is kunt u deze afhalen met uw QR-code", fontSize = 20.sp, textAlign = TextAlign.Center)
         }
 }
 
