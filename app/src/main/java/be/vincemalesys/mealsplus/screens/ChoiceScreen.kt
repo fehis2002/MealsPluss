@@ -23,9 +23,7 @@ import be.vincemalesys.mealsplus.ui.theme.MealsPlusTheme
 
 
 @Composable
-fun ChoiceScreen(modifier: Modifier = Modifier) {
-Column {
-    MealsPlusAppBar(currentScreen = MealScreen.Start, canNavigateBack = false, navigateUp = { /*TODO*/ })
+fun ChoiceScreen(modifier: Modifier = Modifier, click: () -> Unit, clickBestellingen: () -> Unit) {
     Column(
         modifier = modifier
             .height(630.dp)
@@ -35,26 +33,17 @@ Column {
     ) {
         Title()
         Row {
-            Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(
+            Button(onClick = click, colors = ButtonDefaults.buttonColors(
                 containerColor = androidx.compose.ui.graphics.Color.Red,
                 contentColor = androidx.compose.ui.graphics.Color.White)) {
                 Text(text = "Bestellen")
             }
-            Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(
+            Button(onClick = clickBestellingen, colors = ButtonDefaults.buttonColors(
                 containerColor = androidx.compose.ui.graphics.Color.Red,
                 contentColor = androidx.compose.ui.graphics.Color.White)) {
                     Text(text = "Bestellingen")
             }
         }
     }
-    MealsPlusAppBarBottom()
-}
 }
 
-@Composable
-@Preview(showSystemUi = true, showBackground = true)
-fun ChoiceScreenPreview(modifier: Modifier = Modifier) {
-    MealsPlusTheme {
-        ChoiceScreen()
-    }
-}

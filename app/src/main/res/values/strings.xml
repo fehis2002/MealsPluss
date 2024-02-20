@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">MealsPlus</string>
     <string name="menu">Menu</string>
+    <string name="Choice">Choice</string>
+    <string name="Order">Order</string>
+    <string name="Overview">Overview</string>
+    <string name="Payment">Payment</string>
+    <string name="QR">QR</string>
 </resources>

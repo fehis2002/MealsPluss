@@ -24,23 +24,12 @@ import be.vincemalesys.mealsplus.ui.theme.MealsPlusTheme
 
 @Composable
 fun PaymentAcceptanceScreen(modifier: Modifier = Modifier) {
-    Column {
-        MealsPlusAppBar(currentScreen = MealScreen.Start, canNavigateBack = false, navigateUp = { /*TODO*/ })
-        Column (verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally, modifier = modifier
+    Column (verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally, modifier = modifier
             .height(630.dp)
             .padding(10.dp)
             .fillMaxWidth()){
             Title()
             Text(text = "Uw broodje is besteld. U kunt het ophalen in de Deli om 13:00. U krijgt een melding zodra een het klaargemaakt is met een QR-code.", fontSize = 25.sp, lineHeight = 50.sp)
         }
-        MealsPlusAppBarBottom()
-    }
 }
 
-@Composable
-@Preview(showBackground = true, showSystemUi = true)
-fun PaymentAcceptanceScreenPreview() {
-    MealsPlusTheme {
-        PaymentAcceptanceScreen()
-    }
-}

@@ -23,9 +23,7 @@ import be.vincemalesys.mealsplus.ui.theme.MealsPlusTheme
 
 
 @Composable
-fun OverviewOrderScreen(modifier: Modifier = Modifier) {
-    Column {
-        MealsPlusAppBar(currentScreen = MealScreen.Start, canNavigateBack = false, navigateUp = { /*TODO*/ })
+fun OverviewOrderScreen(modifier: Modifier = Modifier, click: () -> Unit, clickTerug: () -> Unit) {
         Column (modifier = modifier
             .fillMaxWidth()
             .height(630.dp)
@@ -47,14 +45,6 @@ fun OverviewOrderScreen(modifier: Modifier = Modifier) {
                 }
             }
         }
-        MealsPlusAppBarBottom()
-    }
+
 }
 
-@Composable
-@Preview(showSystemUi = true, showBackground = true)
-fun OverviewOrderScreenPreview() {
-    MealsPlusTheme {
-        OverviewOrderScreen()
-    }
-}

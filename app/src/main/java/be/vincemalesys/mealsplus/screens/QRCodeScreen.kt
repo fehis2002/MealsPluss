@@ -24,8 +24,6 @@ import be.vincemalesys.mealsplus.ui.theme.MealsPlusTheme
 
 @Composable
 fun QRCodeScreen(modifier: Modifier = Modifier) {
-    Column {
-        MealsPlusAppBar(currentScreen = MealScreen.Start, canNavigateBack = false, navigateUp = { /*TODO*/ })
         Column (verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally, modifier = modifier.padding(10.dp).fillMaxWidth().height(610.dp)) {
             Title()
             Text(text = "Bestellingsnummer", fontSize = 30.sp)
@@ -34,14 +32,7 @@ fun QRCodeScreen(modifier: Modifier = Modifier) {
             Image(painter = painterResource(id = R.drawable.qrcode), contentDescription = null)
             Text(text = "In vak 10 om 13:00", fontSize = 30.sp)
         }
-        MealsPlusAppBarBottom()
-    }
+
 }
 
-@Composable
-@Preview(showBackground = true, showSystemUi = true)
-fun QRCodeScreenPreview(modifier: Modifier = Modifier) {
-    MealsPlusTheme {
-        QRCodeScreen(modifier = modifier)
-    }
-}
+

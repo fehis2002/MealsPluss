@@ -34,11 +34,23 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import be.vincemalesys.mealsplus.screens.ChoiceScreen
+import be.vincemalesys.mealsplus.screens.OrderScreen
+import be.vincemalesys.mealsplus.screens.OverviewOrderScreen
+import be.vincemalesys.mealsplus.screens.PaymentAcceptanceScreen
+import be.vincemalesys.mealsplus.screens.QRCodeScreen
 import be.vincemalesys.mealsplus.ui.Menu
 
 
 enum class MealScreen(@StringRes val title: Int){
-    Start(title = R.string.menu)
+    Start(title = R.string.menu),
+    Choice(title = R.string.Choice),
+    Order(title = R.string.Order),
+    Overview(title = R.string.Overview),
+    Payment(title = R.string.Payment),
+    Qr(title = R.string.QR)
+
+
 }
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -126,8 +138,24 @@ fun MealsPlusApp(navController: NavHostController = rememberNavController()){
             modifier = Modifier.padding(innerPadding)
         ){
             composable(route = MealScreen.Start.name){
-                Menu()
+                Menu(click = { navController.navigate(MealScreen.Choice.name)})
             }
+            composable(route = MealScreen.Choice.name){
+                ChoiceScreen(click = {navController.navigate(MealScreen.Order.name)}, clickBestellingen = {navController.navigate(MealScreen.Qr.name)})
+            }
+            composable(route = MealScreen.Order.name){
+                OrderScreen(click = {navController.navigate(MealScreen.Overview.name)})
+            }
+            composable(route = MealScreen.Overview.name){
+                OverviewOrderScreen(click = {navController.navigate(MealScreen.Payment.name)}, clickTerug = {navController.navigate(MealScreen.Order.name)})
+            }
+            composable(route = MealScreen.Payment.name){
+                PaymentAcceptanceScreen()
+            }
+            composable(route = MealScreen.Qr.name){
+                QRCodeScreen()
+            }
+
 
         }
 

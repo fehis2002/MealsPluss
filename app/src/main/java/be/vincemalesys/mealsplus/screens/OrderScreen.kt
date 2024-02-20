@@ -35,7 +35,7 @@ import be.vincemalesys.mealsplus.ui.theme.MealsPlusTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun OrderScreen(modifier: Modifier = Modifier) {
+fun OrderScreen(modifier: Modifier = Modifier, click: () -> Unit) {
 
     var broodjes = listOf<String>(
         "Ham - SMART - €3,15",
@@ -66,8 +66,6 @@ fun OrderScreen(modifier: Modifier = Modifier) {
         "Bruin"
     )
 
-    Column {
-        MealsPlusAppBar(currentScreen = MealScreen.Start, canNavigateBack = false, navigateUp = { /*TODO*/ })
         Column (
             modifier = modifier
                 .height(630.dp)
@@ -97,22 +95,13 @@ fun OrderScreen(modifier: Modifier = Modifier) {
                 Text(text = "Tijdstip", modifier.weight(0.3f))
                 Dropdown(placeholder = "kies een tijdstip", lijst = tijdstippen, modifier = modifier.weight(0.7f))
             }
-            Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(
+            Button(onClick = click, colors = ButtonDefaults.buttonColors(
                 containerColor = androidx.compose.ui.graphics.Color.Red,
                 contentColor = androidx.compose.ui.graphics.Color.White))
             {
                 Text(text = "Bestellen")
             }
         }
-        MealsPlusAppBarBottom()
-    }
+
 }
 
-@Composable
-@Preview(showBackground = true, showSystemUi = true)
-fun OrderScreenPreview(modifier: Modifier = Modifier) {
-
-    MealsPlusTheme {
-        OrderScreen()
-    }
-}
