@@ -108,7 +108,7 @@ fun MealsPlusBox(id : Int, click: () -> Unit){
         .padding(10.dp, 5.dp, 10.dp, 5.dp)
         .fillMaxWidth(0.85f)
         .border(2.dp, Color.LightGray, shape = RoundedCornerShape(10.dp))
-        .clickable { click },
+        .clickable(onClick = click),
     ){
         Row(verticalAlignment = Alignment.CenterVertically)  {
             Column{

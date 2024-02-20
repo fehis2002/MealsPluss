@@ -68,7 +68,7 @@ fun MealsPlusAppBar(
     ),
     modifier = modifier,
     navigationIcon = {
-        Text(text = "Vives Plus", color = Color.White, fontSize = 24.sp, fontWeight = FontWeight.Bold)
+        Text(text = "Vives Plus", color = Color.White, fontSize = 24.sp, fontWeight = FontWeight.Bold, modifier = Modifier.clickable { navigateUp() })
 
     })
 }
@@ -86,7 +86,8 @@ fun MealsPlusAppBarBottom(
         ),
         modifier = modifier,
         navigationIcon = {
-            Row (modifier = Modifier.fillMaxWidth(),
+            Row (modifier = Modifier
+                .fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceEvenly
             ){
                 Column (horizontalAlignment = Alignment.CenterHorizontally) {

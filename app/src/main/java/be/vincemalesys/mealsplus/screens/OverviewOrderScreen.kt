@@ -33,12 +33,12 @@ fun OverviewOrderScreen(modifier: Modifier = Modifier, click: () -> Unit, clickT
             Text(text = "Totaalprijs : €3,15")
             Text(text = "Locatie: Deli")
             Row {
-                Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(
+                Button(onClick = clickTerug, colors = ButtonDefaults.buttonColors(
                     containerColor = androidx.compose.ui.graphics.Color.Red,
                     contentColor = androidx.compose.ui.graphics.Color.White)) {
                     Text(text = "Terug")
                 }
-                Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(
+                Button(onClick = click, colors = ButtonDefaults.buttonColors(
                     containerColor = androidx.compose.ui.graphics.Color.Red,
                     contentColor = androidx.compose.ui.graphics.Color.White)) {
                     Text(text = "Betalen")
