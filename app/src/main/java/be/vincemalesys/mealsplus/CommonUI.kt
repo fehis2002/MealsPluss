@@ -110,7 +110,10 @@ fun Textarea(modifier: Modifier = Modifier) {
         onValueChange = { text.value = it }, modifier = modifier
             .height(100.dp)
             .padding(10.dp)
-            .border(width = 1.dp, color = Color.Black, shape = RoundedCornerShape(8.dp))
+            .border(width = 1.dp, color = Color.Black, shape = RoundedCornerShape(8.dp)),
+        placeholder = {
+            Text(text = "Details")
+        }
     )
 }
 

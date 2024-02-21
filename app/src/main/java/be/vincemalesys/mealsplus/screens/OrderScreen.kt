@@ -73,29 +73,24 @@ fun OrderScreen(modifier: Modifier = Modifier) {
                 .height(630.dp)
                 .fillMaxWidth()
                 .padding(10.dp),
-            verticalArrangement = Arrangement.Center,
+            verticalArrangement = Arrangement.SpaceBetween,
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Title()
             Row {
-                Text(text = "Restaurant", modifier.weight(0.3f))
-                Dropdown(placeholder = "kies een restaurant", lijst = restaurants, modifier = modifier.weight(0.7f))
+                Dropdown(placeholder = "kies een restaurant", lijst = restaurants)
             }
             Row {
-                Text(text = "Broodje", modifier.weight(0.3f))
-                Dropdown(placeholder = "kies uw broodje", lijst = broodjes, modifier = modifier.weight(0.7f))
+                Dropdown(placeholder = "Kies uw broodje", lijst = broodjes)
             }
             Row {
-                Text(text = "Type", modifier = modifier.weight(0.3f))
-                Dropdown(placeholder = "Kies het type brood", lijst = typen, modifier = modifier.weight(0.7f))
+                Dropdown(placeholder = "Kies het type brood", lijst = typen)
             }
             Row {
-                Text(text = "Opmerkingen", modifier.weight(0.3f))
-                Textarea(modifier.weight(0.7f))
+                Textarea()
             }
             Row {
-                Text(text = "Tijdstip", modifier.weight(0.3f))
-                Dropdown(placeholder = "kies een tijdstip", lijst = tijdstippen, modifier = modifier.weight(0.7f))
+                Dropdown(placeholder = "kies een tijdstip", lijst = tijdstippen)
             }
             Button(onClick = { /*TODO*/ }, colors = ButtonDefaults.buttonColors(
                 containerColor = androidx.compose.ui.graphics.Color.Red,
