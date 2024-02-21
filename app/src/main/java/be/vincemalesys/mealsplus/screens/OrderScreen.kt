@@ -1,5 +1,6 @@
 package be.vincemalesys.mealsplus.screens
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -33,6 +34,7 @@ import be.vincemalesys.mealsplus.Textarea
 import be.vincemalesys.mealsplus.Title
 import be.vincemalesys.mealsplus.ui.theme.MealsPlusTheme
 
+@SuppressLint("SuspiciousIndentation")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun OrderScreen(modifier: Modifier = Modifier, click: () -> Unit) {
@@ -76,19 +78,19 @@ fun OrderScreen(modifier: Modifier = Modifier, click: () -> Unit) {
         ) {
             Title()
             Row {
-                Dropdown(placeholder = "kies een restaurant", lijst = restaurants)
+                Dropdown(placeholder = "kies een restaurant", lijst = restaurants, label = "Restaurant")
             }
             Row {
-                Dropdown(placeholder = "Kies uw broodje", lijst = broodjes)
+                Dropdown(placeholder = "Kies uw broodje", lijst = broodjes, label = "Broodje")
             }
             Row {
-                Dropdown(placeholder = "Kies het type brood", lijst = typen)
+                Dropdown(placeholder = "Kies het type brood", lijst = typen, label = "Type")
             }
             Row {
                 Textarea()
             }
             Row {
-                Dropdown(placeholder = "kies een tijdstip", lijst = tijdstippen)
+                Dropdown(placeholder = "kies een tijdstip", lijst = tijdstippen, label = "Tijdstip")
             }
             Button(onClick = click, colors = ButtonDefaults.buttonColors(
                 containerColor = androidx.compose.ui.graphics.Color.Red,

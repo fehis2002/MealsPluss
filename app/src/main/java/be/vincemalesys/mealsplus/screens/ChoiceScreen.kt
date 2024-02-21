@@ -3,9 +3,11 @@ package be.vincemalesys.mealsplus.screens
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Text
@@ -38,6 +40,7 @@ fun ChoiceScreen(modifier: Modifier = Modifier, click: () -> Unit, clickBestelli
                 contentColor = androidx.compose.ui.graphics.Color.White)) {
                 Text(text = "Bestellen")
             }
+            Spacer(modifier = modifier.width(10.dp))
             Button(onClick = clickBestellingen, colors = ButtonDefaults.buttonColors(
                 containerColor = androidx.compose.ui.graphics.Color.Red,
                 contentColor = androidx.compose.ui.graphics.Color.White)) {

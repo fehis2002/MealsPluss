@@ -49,7 +49,7 @@ fun Bar(modifier: Modifier = Modifier) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun Dropdown(modifier: Modifier = Modifier, placeholder: String, lijst: List<String>) {
+fun Dropdown(modifier: Modifier = Modifier, placeholder: String, lijst: List<String>, label: String) {
     var isExpanded by remember {
         mutableStateOf(false)
     }
@@ -76,6 +76,9 @@ fun Dropdown(modifier: Modifier = Modifier, placeholder: String, lijst: List<Str
             },
             placeholder = {
                 Text(text = placeholder)
+            },
+            label = {
+                    Text(text = label)
             },
             colors = ExposedDropdownMenuDefaults.textFieldColors(),
             modifier = Modifier.menuAnchor()
@@ -112,6 +115,9 @@ fun Textarea(modifier: Modifier = Modifier) {
             .padding(10.dp)
             .border(width = 1.dp, color = Color.Black, shape = RoundedCornerShape(8.dp)),
         placeholder = {
+            Text(text = "Details")
+        },
+        label = {
             Text(text = "Details")
         }
     )
