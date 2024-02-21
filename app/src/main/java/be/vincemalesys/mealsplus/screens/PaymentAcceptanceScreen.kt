@@ -31,7 +31,7 @@ fun PaymentAcceptanceScreen(modifier: Modifier = Modifier) {
             .fillMaxWidth()){
             Title()
             Text(text = "Uw bestelling is geregistreerd.", fontSize = 25.sp, lineHeight = 50.sp, fontWeight = FontWeight.Bold)
-            Text(text = "Van zodra deze gereed is kunt u deze afhalen met uw QR-code", fontSize = 20.sp, textAlign = TextAlign.Center)
+            Text(text = "Van zodra deze klaar is kunt u deze afhalen met uw QR-code", fontSize = 20.sp, textAlign = TextAlign.Center)
         }
 }
 
